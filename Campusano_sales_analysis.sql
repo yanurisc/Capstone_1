@@ -82,3 +82,23 @@ ORDER BY Sales_Rank;
 
 -- What is your recommendation for where to focus sales attention in the next quarter?
 
+
+SELECT
+    sl.StoreLocation as City,
+    round(sum(ss.Sale_Amount), 2) as Total_Revenue,
+    rank() over (order by sum(ss.Sale_Amount) desc) as Sales_Rank
+FROM Store_Sales ss
+JOIN Store_Locations sl on ss.Store_ID = sl.StoreId
+WHERE sl.State = 'New Jersey'
+GROUP BY sl.StoreLocation
+ORDER BY Sales_Rank;
+
+/* Based on my analysis I have two recommendations for Miami Vue. First, for the weakest locations to have a plan 
+for better management and sales because not all 16 stores are pulling equal weight. For example, better training, 
+promotions and closer manager attention. Second, customers who buy technology spend more than any other category 
+so more customers need to be walking out with a tech purchases. I would suggest resources towards the weakest stores
+and promotions for all technology in the stores. */ 
+
+
+
+
