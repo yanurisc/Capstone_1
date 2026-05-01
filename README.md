@@ -3,8 +3,8 @@ For this project I stepped into the role of a data analyst for EmporiUm, a stude
 
 
 ## My Sales Territory
-Territory: New Jersey (In-Store)
-Region: Northeast
+Territory: New Jersey (In-Store) -
+Region: Northeast -
 Sales Manager: Miami Vue
 
 
