@@ -18,8 +18,8 @@ Sales Manager: Miami Vue
 
 
 ## Tools I Used
-MySQL Workbench
-Microsoft Excel
+MySQL Workbench - 
+Microsoft Excel - 
 Git Bash
 
 
