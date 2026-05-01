@@ -35,8 +35,8 @@ WHERE s1.State = 'New Jersey';
  /* Question 2
  What is the month by month revenue breakdown for the sales territory? 
  
-  Revenue grew steadily every year, starting around $73,000 per month in 2022 and reaching over $140,000
- per month by 2024, with a surprising spike of $250,830 in October 2025. */
+New Jersey revenue grew every year from 2022 to 2025, with each year performing better than the 
+last, and one surprising spike in October 2025 that stood out significantly above all other months. */
 
 SELECT 
 Year(ss.Transaction_Date) as Year,
@@ -52,8 +52,7 @@ ORDER BY year(ss.Transaction_Date), month(ss.Transaction_Date);
 /* Question 3
  Provide a comparison of total revenue for the specific sales territory and the region it belongs to. 
  
-New Jersey generated $5,175,405 while the full Northeast region made $24,237,526 — meaning New Jersey 
-accounts for about 21% of the entire region. */
+New Jersey generated $5,175,405 while the full Northeast region made $24,237,526 in total sales. */
 
 SELECT 
 'New Jersey (Territory)' as Label,
@@ -72,8 +71,8 @@ WHERE m.Region = 'Northeast';
 /* Question 4 
 What is the number of transactions per month and average transaction size by product category for the sales territory? 
 
-Stationery has the most transactions every month but the lowest average sale at around $10, while Technology has the 
-fewest transactions but the highest average sale at over $400. */
+Stationery and supplies has the most transactions every month but the lowest average sale, while Technology has the 
+fewest transactions but the highest average sale. */
 
 SELECT 
 Year(ss.Transaction_Date) as Year,
@@ -93,7 +92,7 @@ ORDER BY year, Month_Num, Num_Transactions DESC;
 Can you provide a ranking of in-store sales performance by each store in the sales territory, or a ranking of online 
 sales performance by state within an online sales territory?
 
-Ranking all 16 New Jersey stores by total revenue, the top stores are significantly outperforming the bottom stores,
+Ranking all 16 New Jersey stores by total revenue, the top stores are outperforming the bottom stores,
 showing a clear gap in sales performance across the territory. */
 
 SELECT
