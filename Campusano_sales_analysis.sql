@@ -16,7 +16,7 @@ FROM Management
 Where Salesmanager = 'Miami Vue';
 
 /* Question 1
- What is total revenue overall for sales in the assigned territory, plus the start date and end date that 
+What is total revenue overall for sales in the assigned territory, plus the start date and end date that 
 tell you what period the data covers? 
 
 The New Jersey territory made $5,175,405.87 in total sales between January 2022 and December 2025. */
@@ -118,9 +118,9 @@ so more customers need to be walking out with a tech purchases. I would suggest 
 and promotions for all technology in the stores. */
 
 SELECT
-    sl.StoreLocation as City,
-    round(sum(ss.Sale_Amount), 2) as Total_Revenue,
-    rank() over (order by sum(ss.Sale_Amount) desc) as Sales_Rank
+sl.StoreLocation as City,
+round(sum(ss.Sale_Amount), 2) as Total_Revenue,
+rank() over (order by sum(ss.Sale_Amount) desc) as Sales_Rank
 FROM Store_Sales ss
 JOIN Store_Locations sl on ss.Store_ID = sl.StoreId
 WHERE sl.State = 'New Jersey'
